@@ -20,6 +20,18 @@ public class Drawing {
         
         System.out.println(canvas);
         
+        Line lineV = new Line(x1,y1,x2,y2,canvas);
+        
+        lineV.draw();
+        
+        System.out.println(lineV);
+        
+        Line lineH = new Line(3,10,10,10,canvas);
+        
+        lineH.draw();
+        
+        System.out.println(lineH);
+        
         /*for (int i = 0; i <=h; i++) {
             for (int j = 0; j <=w; j++) {
                 if (i == 0) {

@@ -10,5 +10,5 @@ package com.drawing;
  * @author rkarim
  */
 public abstract class Shape {
-    public abstract Canvas  draw(Canvas canvus);
+    public abstract Canvas  draw();
 }

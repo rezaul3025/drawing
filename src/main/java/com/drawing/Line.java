@@ -9,39 +9,42 @@ package com.drawing;
  *
  * @author rkarim
  */
-public class Line extends Shape{
+public class Line extends Shape {
 
     private int x1;
-    
+
     private int y1;
-    
+
     private int x2;
-    
+
     private int y2;
-    
-    public Line(){
-        
+
+    private Canvas canvas;
+
+    public Line() {
+
     }
-    
-    public Line(int x1, int y1, int x2, int y2){
+
+    public Line(int x1, int y1, int x2, int y2, Canvas canvas) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
         this.y2 = y2;
+        this.canvas = canvas;
     }
-    
+
     /**
      *
      * @param canvas
      * @return
      */
     @Override
-    public Canvas draw(Canvas canvas) {
-        
+    public Canvas draw() {
+
         String canvusLine = canvas.getContainer();
-        if(y1 == y2){
-            for(int l=x1;l<=x2;l++){
-                String xy = "("+l+","+y1+")";
+        if (y1 == y2) {
+            for (int l = x1; l <= x2; l++) {
+                String xy = "(" + l + "," + y1 + ")";
                 //sb.deleteCharAt(sb.indexOf(xy));
                 //sb.insert(sb.indexOf(xy), "X");
                 canvusLine = canvusLine.replace(xy, "X");
@@ -56,18 +59,15 @@ public class Line extends Shape{
             
             System.out.println(lineHCanvus);*/
         }
-        
-        
-        
-        
-        if(x1 == x2){
-            for(int l=y1;l<=y2;l++){
-                String xy = "("+y1+","+l+")";
+
+        if (x1 == x2) {
+            for (int l = y1; l <= y2; l++) {
+                String xy = "(" + y1 + "," + l + ")";
                 //sb.deleteCharAt(sb.indexOf(xy));
                 //sb.insert(sb.indexOf(xy), "X");
                 canvusLine = canvusLine.replace(xy, "X");
             }
-            
+
             /*String lineVCanvus= canvus;
             
             for(int lh = 0;lh<=h;lh++){
@@ -79,9 +79,9 @@ public class Line extends Shape{
             
             System.out.println(lineVCanvus);*/
         }
-        
+
         canvas.setContainer(canvusLine);
-        
+
         return canvas;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -117,5 +117,26 @@ public class Line extends Shape{
     public void setY2(int y2) {
         this.y2 = y2;
     }
-    
+
+    public Canvas getCanvas() {
+        return canvas;
+    }
+
+    public void setCanvas(Canvas canvas) {
+        this.canvas = canvas;
+    }
+
+    @Override
+    public String toString() {
+        String lineDisplay = this.canvas.getContainer();
+
+        for (int lh = 0; lh <= this.canvas.getH(); lh++) {
+            for (int lw = 0; lw <= this.canvas.getW(); lw++) {
+                String lhlw = "(" + lw + "," + lh + ")";
+                lineDisplay = lineDisplay.replace(lhlw, " ");
+            }
+        }
+
+        return lineDisplay;
+    }
 }
