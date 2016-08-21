@@ -40,7 +40,6 @@ public class Line extends Shape {
      */
     @Override
     public Canvas draw() {
-
         String canvusLine = canvas.getContainer();
         if (y1 == y2) {
             for (int l = x1; l <= x2; l++) {

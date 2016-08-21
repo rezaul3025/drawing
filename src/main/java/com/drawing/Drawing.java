@@ -22,15 +22,21 @@ public class Drawing {
         
         Line lineV = new Line(x1,y1,x2,y2,canvas);
         
-        lineV.draw();
+        canvas =lineV.draw();
         
         System.out.println(lineV);
         
         Line lineH = new Line(3,10,10,10,canvas);
         
-        lineH.draw();
+        canvas =lineH.draw();
         
         System.out.println(lineH);
+        
+        Rectangle rectangle = new Rectangle(3,10,10,20,canvas);
+        
+        rectangle.draw();
+        
+        System.out.println(rectangle);
         
         /*for (int i = 0; i <=h; i++) {
             for (int j = 0; j <=w; j++) {
