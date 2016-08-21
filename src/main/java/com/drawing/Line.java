@@ -62,6 +62,17 @@ public class Line extends Shape {
 
         return canvas;
     }
+    
+    public void fillRectangleCreatedByLines(int x1,int y1,int x2,int y2){
+        String canvasLine = canvas.getContainer();
+        for(int i=y1+1;i<=y2;i++){
+            for(int j=x1+1;j<=x2;j++){
+                canvasLine = canvasLine.replace("(" + j + "," + i + ")", " ");
+            }
+        }
+        
+        canvas.setContainer(canvasLine);
+    }
 
     public int getX1() {
         return x1;
