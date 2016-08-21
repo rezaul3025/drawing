@@ -35,54 +35,28 @@ public class Line extends Shape {
 
     /**
      *
-     * @param canvas
      * @return
      */
     @Override
     public Canvas draw() {
-        String canvusLine = canvas.getContainer();
+        String canvasLine = canvas.getContainer();
         if (y1 == y2) {
             for (int l = x1; l <= x2; l++) {
                 String xy = "(" + l + "," + y1 + ")";
-                //sb.deleteCharAt(sb.indexOf(xy));
-                //sb.insert(sb.indexOf(xy), "X");
-                canvusLine = canvusLine.replace(xy, "X");
+                canvasLine = canvasLine.replace(xy, "x");
             }
-            /*String lineHCanvus = canvus;
-            for(int lh = 0;lh<=h;lh++){
-                for(int lw=0;lw<=w;lw++){
-                    String lhlw = "("+lw+","+lh+")";
-                    lineHCanvus = lineHCanvus.replace(lhlw, " ");
-                }
-            }
-            
-            System.out.println(lineHCanvus);*/
         }
 
         if (x1 == x2) {
             for (int l = y1; l <= y2; l++) {
                 String xy = "(" + y1 + "," + l + ")";
-                //sb.deleteCharAt(sb.indexOf(xy));
-                //sb.insert(sb.indexOf(xy), "X");
-                canvusLine = canvusLine.replace(xy, "X");
+                canvasLine = canvasLine.replace(xy, "x");
             }
-
-            /*String lineVCanvus= canvus;
-            
-            for(int lh = 0;lh<=h;lh++){
-                for(int lw=0;lw<=w;lw++){
-                    String lhlw = "("+lw+","+lh+")";
-                    lineVCanvus = lineVCanvus.replace(lhlw, " ");
-                }
-            }
-            
-            System.out.println(lineVCanvus);*/
         }
 
-        canvas.setContainer(canvusLine);
+        canvas.setContainer(canvasLine);
 
         return canvas;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getX1() {

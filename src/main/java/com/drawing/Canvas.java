@@ -61,6 +61,25 @@ public class Canvas {
 
         return this;
     }
+    
+    public String fill(int x,int y, String color){
+        String canvasFill = this.container;
+        /*for (int i = y; i <= h; i++) {
+            for (int j = x; j <= w; j++) {
+                String xy = "(" + j + "," + i + ")";
+                   canvasFill = canvasFill.replace(xy, color);
+            }
+        }*/
+        
+        for (int i = 0; i <= h; i++) {
+            for (int j = 0; j <= w; j++) {
+                String xy = "(" + j + "," + i + ")";
+                   canvasFill = canvasFill.replace(xy, color);
+            }
+        }
+        
+        return canvasFill;
+    }
 
     public int getH() {
         return h;
@@ -88,14 +107,14 @@ public class Canvas {
 
     @Override
     public String toString() {
-        String canvusDisplay = this.container;
+        String canvasDisplay = this.container;
         for (int x = 0; x <= h; x++) {
             for (int y = 0; y <= w; y++) {
                 String xy = "(" + y + "," + x + ")";
-                canvusDisplay = canvusDisplay.replace(xy, " ");
+                canvasDisplay = canvasDisplay.replace(xy, " ");
             }
         }
-        return canvusDisplay;
+        return canvasDisplay;
     }
 
 }

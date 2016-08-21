@@ -52,16 +52,20 @@ public class Rectangle extends Shape {
         for(int j= y1;j<=y2;j++){
             canvusRectangle = canvusRectangle.replace("(" + x2 + "," + j + ")", "x");
         }
-        /*for(int i= y1;i<=x2;i++){
-            canvusRectangle = canvusRectangle.replace("(" + y2 + "," + i + ")", "x");
+        
+        for(int i=y1+1;i<y2;i++){
+            for(int j=x1+1;j<x2;j++){
+                canvusRectangle = canvusRectangle.replace("(" + j + "," + i + ")", " ");
+            }
         }
+        
         /*for (int i = y1; i <= y2; i++) {
             for (int j = x1; j <= x2; j++) {
                 if (i == y1) {
-                    canvusRectangle = canvusRectangle.replace("(" + i + "," + j + ")", "x");
+                    canvusRectangle = canvusRectangle.replace("(" + i + "," + y1 + ")", "x");
                     if (j == x2 - x1) {
                        
-                        canvusRectangle = canvusRectangle.replace("(" + i + "," + j + ")", "\n");
+                        canvusRectangle = canvusRectangle.replace("(" + i + "," + y1 + ")", "\n");
                     }
                 } else if (i > y1 && i < y2 - y1 - 1) {
                     if (j == x1) {

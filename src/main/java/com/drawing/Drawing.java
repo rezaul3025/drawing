@@ -32,11 +32,13 @@ public class Drawing {
 
         System.out.println(lineH);
 
-        Rectangle rectangle = new Rectangle(14, 3, 30, 10, canvas);
+        Rectangle rectangle = new Rectangle(14, 3, 30, 6, canvas);
 
         rectangle.draw();
 
         System.out.println(rectangle);
+        
+        System.out.println(canvas.fill(3,5,"o"));
 
     }
 }
