@@ -45,6 +45,8 @@ public class Line extends Shape {
                 String xy = "(" + l + "," + y1 + ")";
                 canvasLine = canvasLine.replace(xy, "x");
             }
+            
+            
         }
 
         if (x1 == x2) {
@@ -52,6 +54,8 @@ public class Line extends Shape {
                 String xy = "(" + x1 + "," + l + ")";
                 canvasLine = canvasLine.replace(xy, "x");
             }
+            
+            
         }
 
         canvas.setContainer(canvasLine);
@@ -109,7 +113,7 @@ public class Line extends Shape {
                 lineDisplay = lineDisplay.replace(lhlw, " ");
             }
         }
-
+        
         return lineDisplay;
     }
 }
