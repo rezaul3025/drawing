@@ -5,12 +5,15 @@
  */
 package com.drawing;
 
+import com.sun.istack.internal.NotNull;
+
 /**
  *
  * @author rkarim
  */
 public class Canvas {
 
+    @NotNull
     private int h;
 
     private int w;
@@ -22,62 +25,61 @@ public class Canvas {
     }
 
     public Canvas(int h, int w) {
-        this.h = h;
-        this.w = w;
+        this.setH(h);
+        this.setW(w);
     }
 
     public Canvas create() {
-        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        StringBuffer canvasContainer = new StringBuffer();
 
-        for (int i = 0; i <= h; i++) {
-            for (int j = 0; j <= w; j++) {
-                if (i == 0) {
-                    canvasContainer.append("-");
-                    if (j == w) {
-                        //sb.append("*");
-                        canvasContainer.append("\n");
-                    }
-                } else if (i > 0 && i < h - 1) {
-                    if (j == 0) {
-                        canvasContainer.append("|");
-                    } else if (j == w) {
-                        canvasContainer.append("|");
-                        canvasContainer.append("\n");
-                    } else {
-                        canvasContainer.append("(" + j + "," + i + ")");
-                    }
+        if (h > 1 && w > 1) {
+            
+            StringBuffer canvasContainer = new StringBuffer();
 
-                } else if (i == h) {
-                    canvasContainer.append("-");
-                    if (j == w) {
-                        canvasContainer.append("\n");
+            for (int i = 0; i <= h; i++) {
+                for (int j = 0; j <= w; j++) {
+                    if (i == 0) {
+                        canvasContainer.append("-");
+                        if (j == w) {
+                            canvasContainer.append("\n");
+                        }
+                    } else if (i > 0 && i < h - 1) {
+                        if (j == 0) {
+                            canvasContainer.append("|");
+                        } else if (j == w) {
+                            canvasContainer.append("|");
+                            canvasContainer.append("\n");
+                        } else {
+                            canvasContainer.append("(" + j + "," + i + ")");
+                        }
+
+                    } else if (i == h) {
+                        canvasContainer.append("-");
+                        if (j == w) {
+                            canvasContainer.append("\n");
+                        }
                     }
                 }
             }
+
+            this.setContainer(canvasContainer.toString());
         }
-
-        this.setContainer(canvasContainer.toString());
-
+        else{
+            throw new IllegalArgumentException("Cannot create canvas with heigth:"+h+" and width:"+w);
+        }
+        
         return this;
     }
-    
-    public String fill(int x,int y, String color){
+
+    public String fill(int x, int y, String color) {
         String canvasFill = this.container;
-        /*for (int i = y; i <= h; i++) {
-            for (int j = x; j <= w; j++) {
-                String xy = "(" + j + "," + i + ")";
-                   canvasFill = canvasFill.replace(xy, color);
-            }
-        }*/
-        
+
         for (int i = 0; i <= h; i++) {
             for (int j = 0; j <= w; j++) {
                 String xy = "(" + j + "," + i + ")";
-                   canvasFill = canvasFill.replace(xy, color);
+                canvasFill = canvasFill.replace(xy, color);
             }
         }
-        
+
         return canvasFill;
     }
 
@@ -86,6 +88,9 @@ public class Canvas {
     }
 
     public void setH(int h) {
+        if (h < 1) {
+            throw new IllegalArgumentException("Not a valid height of canvas");
+        }
         this.h = h;
     }
 
@@ -94,6 +99,10 @@ public class Canvas {
     }
 
     public void setW(int w) {
+        if (w < 1) {
+            throw new IllegalArgumentException("Not a valid width of canvas");
+        }
+
         this.w = w;
     }
 

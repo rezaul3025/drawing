@@ -12,8 +12,8 @@ package com.drawing;
 public class Drawing {
 
     public static void main(String[] arg) {
-        int prex1 = 3, prey1=3, prex2=3,prey2=10;
-        int x1 = 3, y1 = 3, x2 = 10, y2 = 3;
+        int prex1 = 3, prey1=6, prex2=3,prey2=10;
+        int x1 = 3, y1 = 6, x2 = 10, y2 = 6;
         int h = 20, w = 40;
         Canvas canvas = new Canvas(h, w);
         canvas = canvas.create();
