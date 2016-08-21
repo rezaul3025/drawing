@@ -32,7 +32,7 @@ public class Drawing {
 
         System.out.println(lineH);
 
-        Rectangle rectangle = new Rectangle(3, 10, 10, 20, canvas);
+        Rectangle rectangle = new Rectangle(14, 3, 30, 10, canvas);
 
         rectangle.draw();
 

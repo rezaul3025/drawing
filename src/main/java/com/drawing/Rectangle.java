@@ -37,12 +37,30 @@ public class Rectangle extends Shape {
     public Canvas draw() {
         String canvusRectangle = canvas.getContainer();
         //System.out.println(canvusRectangle);
-        for (int i = y1; i <= y2; i++) {
+        for(int i= x1;i<=x2;i++){
+            canvusRectangle = canvusRectangle.replace("(" + i + "," + y1 + ")", "x");
+        }
+        
+        for(int i= x1;i<=x2;i++){
+            canvusRectangle = canvusRectangle.replace("(" + i + "," + y2 + ")", "x");
+        }
+        
+        for(int j= y1;j<=y2;j++){
+            canvusRectangle = canvusRectangle.replace("(" + x1 + "," + j + ")", "x");
+        }
+        
+        for(int j= y1;j<=y2;j++){
+            canvusRectangle = canvusRectangle.replace("(" + x2 + "," + j + ")", "x");
+        }
+        /*for(int i= y1;i<=x2;i++){
+            canvusRectangle = canvusRectangle.replace("(" + y2 + "," + i + ")", "x");
+        }
+        /*for (int i = y1; i <= y2; i++) {
             for (int j = x1; j <= x2; j++) {
                 if (i == y1) {
                     canvusRectangle = canvusRectangle.replace("(" + i + "," + j + ")", "x");
                     if (j == x2 - x1) {
-                        //sb.append("*");
+                       
                         canvusRectangle = canvusRectangle.replace("(" + i + "," + j + ")", "\n");
                     }
                 } else if (i > y1 && i < y2 - y1 - 1) {
@@ -66,7 +84,7 @@ public class Rectangle extends Shape {
                     }
                 }
             }
-        }
+        }*/
 
         canvas.setContainer(canvusRectangle);
 

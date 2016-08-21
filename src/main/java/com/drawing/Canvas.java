@@ -33,23 +33,23 @@ public class Canvas {
         for (int i = 0; i <= h; i++) {
             for (int j = 0; j <= w; j++) {
                 if (i == 0) {
-                    canvasContainer.append("*");
+                    canvasContainer.append("-");
                     if (j == w) {
                         //sb.append("*");
                         canvasContainer.append("\n");
                     }
                 } else if (i > 0 && i < h - 1) {
                     if (j == 0) {
-                        canvasContainer.append("*");
+                        canvasContainer.append("|");
                     } else if (j == w) {
-                        canvasContainer.append("*");
+                        canvasContainer.append("|");
                         canvasContainer.append("\n");
                     } else {
                         canvasContainer.append("(" + j + "," + i + ")");
                     }
 
                 } else if (i == h) {
-                    canvasContainer.append("*");
+                    canvasContainer.append("-");
                     if (j == w) {
                         canvasContainer.append("\n");
                     }
