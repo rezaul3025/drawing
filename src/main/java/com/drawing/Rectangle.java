@@ -36,40 +36,41 @@ public class Rectangle extends Shape {
     @Override
     public Canvas draw() {
         String canvusRectangle = canvas.getContainer();
+        //System.out.println(canvusRectangle);
         for (int i = y1; i <= y2; i++) {
             for (int j = x1; j <= x2; j++) {
-                if (i == 0) {
-                    canvusRectangle = canvusRectangle.replace("(" + j + "," + i + ")", "x");
+                if (i == y1) {
+                    canvusRectangle = canvusRectangle.replace("(" + i + "," + j + ")", "x");
                     if (j == x2 - x1) {
                         //sb.append("*");
-                        canvusRectangle = canvusRectangle.replace("(" + j + "," + i + ")", "\n");
+                        canvusRectangle = canvusRectangle.replace("(" + i + "," + j + ")", "\n");
                     }
-                } else if (i > 0 && i < y2 - y1 - 1) {
-                    if (j == 0) {
+                } else if (i > y1 && i < y2 - y1 - 1) {
+                    if (j == x1) {
                         String xy = "(" + j + "," + i + ")";
                         canvusRectangle = canvusRectangle.replace(xy, "x");
                     } else if (j == x2 - x1) {
                         String xy = "(" + j + "," + i + ")";
                         canvusRectangle = canvusRectangle.replace(xy, "x");
-                        canvusRectangle = canvusRectangle.replace(xy, "\n");
+                        canvusRectangle = canvusRectangle.replace("(" + j+1 + "," + i+1 + ")", "\n");
                     } else {
                         String xy = "(" + j + "," + i + ")";
                         canvusRectangle = canvusRectangle.replace(xy, "");
                     }
 
                 } else if (i == y2 - y1) {
-                    String xy = "(" + j + "," + i + ")";
+                    String xy = "(" + i + "," + j + ")";
                     canvusRectangle = canvusRectangle.replace(xy, "x");
                     if (j == x2 - x1) {
-                        canvusRectangle = canvusRectangle.replace("(" + j + "," + i + ")", "\n");
+                        canvusRectangle = canvusRectangle.replace("(" + i + "," + j + ")", "\n");
                     }
                 }
             }
         }
 
-        this.canvas.setContainer(canvusRectangle);
+        canvas.setContainer(canvusRectangle);
 
-        return this.canvas;
+        return canvas;
     }
 
     @Override

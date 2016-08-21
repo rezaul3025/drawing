@@ -13,102 +13,30 @@ public class Drawing {
 
     public static void main(String[] arg) {
         StringBuffer sb = new StringBuffer();
-        int x1=10,y1=3,x2=10,y2=10;
+        int x1 = 10, y1 = 3, x2 = 10, y2 = 10;
         int h = 20, w = 40;
-        Canvas canvas = new Canvas(h,w);
+        Canvas canvas = new Canvas(h, w);
         canvas = canvas.create();
-        
+
         System.out.println(canvas);
-        
-        Line lineV = new Line(x1,y1,x2,y2,canvas);
-        
-        canvas =lineV.draw();
-        
+
+        Line lineV = new Line(x1, y1, x2, y2, canvas);
+
+        lineV.draw();
+
         System.out.println(lineV);
-        
-        Line lineH = new Line(3,10,10,10,canvas);
-        
-        canvas =lineH.draw();
-        
+
+        Line lineH = new Line(3, 10, 10, 10, canvas);
+
+        lineH.draw();
+
         System.out.println(lineH);
-        
-        Rectangle rectangle = new Rectangle(3,10,10,20,canvas);
-        
+
+        Rectangle rectangle = new Rectangle(3, 10, 10, 20, canvas);
+
         rectangle.draw();
-        
+
         System.out.println(rectangle);
-        
-        /*for (int i = 0; i <=h; i++) {
-            for (int j = 0; j <=w; j++) {
-                if (i == 0) {
-                    sb.append("*");
-                    if (j == w) {
-                        //sb.append("*");
-                        sb.append("\n");
-                    }
-                } else if (i > 0 && i < h - 1) {
-                    if (j == 0){
-                        sb.append("*");
-                    } 
-                    else if(j == w){
-                        sb.append("*");
-                        sb.append("\n");
-                    }
-                    else {
-                        sb.append("("+j+","+i+")");
-                    }
-                     
-                } else if (i == h) {
-                    sb.append("*");
-                    if (j == w) {
-                        sb.append("\n");
-                    }
-                }
-            }
-        }*/
-        //sb.deleteCharAt(23);
-        //sb.insert(23, "X");
-        //sb.deleteCharAt(24);
-        //sb.insert(24, "Y");
-        //sb.append("\n*").append("\n*").append("\n*").append("*****").append("\n*").append("\n*").append("\n*");
-       /* String canvus= sb.toString();
-        if(y1 == y2){
-            for(int l=x1;l<=x2;l++){
-                String xy = "("+l+","+y1+")";
-                canvus = canvus.replace(xy, "X");
-            }
-            String lineHCanvus = canvus;
-            for(int lh = 0;lh<=h;lh++){
-                for(int lw=0;lw<=w;lw++){
-                    String lhlw = "("+lw+","+lh+")";
-                    lineHCanvus = lineHCanvus.replace(lhlw, " ");
-                }
-            }
-            
-            System.out.println(lineHCanvus);
-        }*/
-        
-        
-        
-        
-        /*if(x1 == x2){
-            for(int l=y1;l<=y2;l++){
-                String xy = "("+y1+","+l+")";
-                canvus = canvus.replace(xy, "X");
-            }
-            
-            String lineVCanvus= canvus;
-            
-            for(int lh = 0;lh<=h;lh++){
-                for(int lw=0;lw<=w;lw++){
-                    String lhlw = "("+lw+","+lh+")";
-                    lineVCanvus = lineVCanvus.replace(lhlw, " ");
-                }
-            }
-            
-            System.out.println(lineVCanvus);
-        }*/
-        
-        
+
     }
 }
