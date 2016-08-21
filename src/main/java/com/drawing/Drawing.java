@@ -13,7 +13,7 @@ public class Drawing {
 
     public static void main(String[] arg) {
         StringBuffer sb = new StringBuffer();
-        int x1 = 10, y1 = 3, x2 = 10, y2 = 10;
+        int x1 = 3, y1 = 3, x2 = 3, y2 = 10;
         int h = 20, w = 40;
         Canvas canvas = new Canvas(h, w);
         canvas = canvas.create();

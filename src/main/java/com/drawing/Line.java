@@ -49,7 +49,7 @@ public class Line extends Shape {
 
         if (x1 == x2) {
             for (int l = y1; l <= y2; l++) {
-                String xy = "(" + y1 + "," + l + ")";
+                String xy = "(" + x1 + "," + l + ")";
                 canvasLine = canvasLine.replace(xy, "x");
             }
         }
