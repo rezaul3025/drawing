@@ -5,15 +5,13 @@
  */
 package com.drawing;
 
-import com.sun.istack.internal.NotNull;
-
 /**
  *
  * @author rkarim
  */
 public class Canvas {
 
-    @NotNull
+    
     private int h;
 
     private int w;
