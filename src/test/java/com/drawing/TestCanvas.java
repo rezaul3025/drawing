@@ -5,6 +5,7 @@
  */
 package com.drawing;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -26,5 +27,20 @@ public class TestCanvas {
     public void testCanvasCreate(){
         Canvas canvas = new Canvas(-1,-1);
         canvas.create();
+    }
+    
+    @Test
+    public void isCanvasCreated(){
+        Canvas canvas = new Canvas(10,20);
+        canvas.create();
+        Assert.assertTrue(canvas.getContainer().length() > 0);
+    }
+    
+    @Test
+    public void testCanvasFill(){
+        Canvas canvas = new Canvas(10,20);
+        canvas.create();
+        String canvasFill = canvas.fill(10, 10, "o");
+        Assert.assertTrue(canvasFill.contains("o"));
     }
 }

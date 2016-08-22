@@ -58,37 +58,6 @@ public class Rectangle extends Shape {
                 canvusRectangle = canvusRectangle.replace("(" + j + "," + i + ")", " ");
             }
         }
-        
-        /*for (int i = y1; i <= y2; i++) {
-            for (int j = x1; j <= x2; j++) {
-                if (i == y1) {
-                    canvusRectangle = canvusRectangle.replace("(" + i + "," + y1 + ")", "x");
-                    if (j == x2 - x1) {
-                       
-                        canvusRectangle = canvusRectangle.replace("(" + i + "," + y1 + ")", "\n");
-                    }
-                } else if (i > y1 && i < y2 - y1 - 1) {
-                    if (j == x1) {
-                        String xy = "(" + j + "," + i + ")";
-                        canvusRectangle = canvusRectangle.replace(xy, "x");
-                    } else if (j == x2 - x1) {
-                        String xy = "(" + j + "," + i + ")";
-                        canvusRectangle = canvusRectangle.replace(xy, "x");
-                        canvusRectangle = canvusRectangle.replace("(" + j+1 + "," + i+1 + ")", "\n");
-                    } else {
-                        String xy = "(" + j + "," + i + ")";
-                        canvusRectangle = canvusRectangle.replace(xy, "");
-                    }
-
-                } else if (i == y2 - y1) {
-                    String xy = "(" + i + "," + j + ")";
-                    canvusRectangle = canvusRectangle.replace(xy, "x");
-                    if (j == x2 - x1) {
-                        canvusRectangle = canvusRectangle.replace("(" + i + "," + j + ")", "\n");
-                    }
-                }
-            }
-        }*/
 
         canvas.setContainer(canvusRectangle);
 
