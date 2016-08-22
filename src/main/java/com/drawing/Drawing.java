@@ -49,8 +49,9 @@ public class Drawing {
         System.out.println(canvas.fill(3, 5, "o"));*/
 
         Scanner inputScanner = new Scanner(System.in);
-        
+
         do {
+            System.out.println("Enter 'Q' to exit");
             System.out.print("enter command:");
             String inputLine = inputScanner.nextLine();
             Canvas canvas = null;
